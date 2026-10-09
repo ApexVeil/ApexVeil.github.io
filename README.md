@@ -2,8 +2,8 @@
 
 Source for https://apexveil.github.io. This repository is separate from the [ApexVeil engine](https://github.com/ApexVeil/ApexVeil).
 
-A minimal static project page: no account system, model service, analytics or uploaded user media. The automotive drawing is an original illustrative SVG, not a claim of inference quality.
+A static editorial project page with responsive desktop/mobile layouts. The two photographic assets were generated with the built-in ImageGen tool as brand concept imagery. They are explicitly captioned and are not algorithm output demonstrations. No user evaluation media is published.
 
-Preview locally with `python -m http.server 8000 --bind 127.0.0.1`. Publication uses GitHub Pages from the main branch root. Keep status text aligned with implemented, verified capabilities in the engine repository.
+Preview with `python -m http.server 18766 --bind 127.0.0.1`. GitHub Pages publishes the main branch root. Keep development status aligned with the core repository.
 
-Original website source and SVG: Apache-2.0. ApexVeil naming and visual identity are not a grant of trademark rights.
+See [design specification and image prompts](docs/DESIGN.md). Original source: Apache-2.0. ApexVeil naming and identity are not a grant of trademark rights.
