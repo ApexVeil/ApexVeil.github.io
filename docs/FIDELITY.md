@@ -1,18 +1,19 @@
-# Design implementation review
+# v3 implementation review
 
-Reviewed on 2026-10-09 using the Codex in-app browser and saved browser screenshots, compared with the three ImageGen section concepts through view_image.
+Recorded on 2026-10-10 (Asia/Shanghai). This review covers the real-image comparison website and its English/Chinese switch. The earlier light editorial v2 and generated production photography have been superseded.
 
-| Comparison | Review and adjustment |
-|---|---|
-| Hero composition | Checked at 1536 x 1024, matching the hero concept. Adjusted top spacing so the image begins near 419px. |
-| Copy and navigation | DOM copy matches the specified header, two-line heading, supporting sentence, CTAs and captions. No extra hero badges, labels or metrics. |
-| Typography | Increased the method heading and editorial row text, then corrected the development heading, body width and footer scale. Native HTML type replaces generated raster lettering. |
-| Palette | Verified the computed neutral off-white is rgb(244, 244, 241). The lower band uses graphite #17191b. |
-| Photography | Standalone hero and detail assets preserve the concept scenes. No color overlays; two WebP assets total about 410 KiB. Images are labeled as concept imagery. |
-| Layout and containers | Open rows and full-width band preserved. No replacement cards, fake editor chrome or repeated navigation. |
-| Mobile | Checked at 390 x 844. Document width equals viewport width, no overflow in headings/navigation/status rows, and both images load. Columns stack and the car remains visible. |
-| Interaction | Approach and Development navigate to their intended sections. Explore GitHub opens the public core repository. |
+## Verified checks
 
-The three section concepts were inspected at their intended desktop widths (1536, 1639 and 1738px). The in-app window initially capped native screenshots at 926px tall; browser screenshot clipping/full-page capture was used to obtain the complete 1536 x 1024 hero. The footer was checked at 1738 x 905. The method region was checked at 1639px wide.
+1. **Published-media scope:** the repository contains three authorized 900 × 505 photographic crops (sunset, shade and rear), each with original, blur, mosaic and custom variants. The cases are pre-rendered; the page does not claim live inference or validated video replacement. See [provenance](DEMO_PROVENANCE.md).
+2. **Chinese mobile layout:** the parent agent checked the rendered page at 390 px and 360 px widths. There was no horizontal overflow. Screenshots were retained privately.
+3. **Language and comparison state:** browser checks confirmed that the shade case, mosaic finish and three-view layout remained selected after switching language. Component tests also confirm divider percentage, DOM-node identity and localized percentage descriptions survive a switch.
+4. **Motion preference:** browser checks confirmed that motion remained off after language switching. The language handler updates text without restarting the animation loop or rebuilding the comparison component.
+5. **Automated integrity:** 12 Node tests passed, covering comparison state transitions, data validation, bilingual key coverage, browser-language fallback, explicit-language persistence and in-place comparison translation. JavaScript syntax checks and `git diff --check` also passed.
 
-Intentional differences: one global header replaces a duplicated header in the generated method reference; mobile uses responsive stacking and reframing; native font rasterization and the separately generated production photographs differ slightly from the concept bitmap. No material layout, copy, asset-loading or interaction mismatch remains in the checked views. This is a faithful implementation review, not a pixel-identical screenshot claim.
+## Scope and limits
+
+The layout remains the dark v3 design with restrained orange accents, self-hosted typography, a real photographic hero and interactive comparisons. Chinese display headings use CJK-capable system fallbacks rather than relying on Bebas Neue for missing glyphs. No new sections or video demonstrations were added during localization.
+
+These checks are not a claim of exhaustive device, assistive-technology or cross-browser coverage. This review does not establish segmentation accuracy, end-to-end processing performance, commercial readiness or video quality. The production website is a demonstration viewer; algorithm evaluation belongs to the separate engine repository.
+
+Private browser screenshots and ImageGen design mockups are excluded from publication.

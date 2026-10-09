@@ -1,0 +1,104 @@
+[
+  {
+    "id": "sunset",
+    "label": "Sunset",
+    "subtitle": "Warm light \u00b7 front three-quarter",
+    "images": {
+      "original": "./assets/demos/sunset/original.webp",
+      "blur": "./assets/demos/sunset/blur.webp",
+      "mosaic": "./assets/demos/sunset/mosaic.webp",
+      "custom": "./assets/demos/sunset/custom.webp"
+    },
+    "quad": [
+      [
+        0.733333,
+        0.29505
+      ],
+      [
+        0.244444,
+        0.421782
+      ],
+      [
+        0.267778,
+        0.706931
+      ],
+      [
+        0.753333,
+        0.574257
+      ]
+    ],
+    "size": [
+      900,
+      505
+    ],
+    "mask": "./assets/demos/sunset/mask.png"
+  },
+  {
+    "id": "shade",
+    "label": "Shade",
+    "subtitle": "Soft shade \u00b7 front detail",
+    "images": {
+      "original": "./assets/demos/shade/original.webp",
+      "blur": "./assets/demos/shade/blur.webp",
+      "mosaic": "./assets/demos/shade/mosaic.webp",
+      "custom": "./assets/demos/shade/custom.webp"
+    },
+    "quad": [
+      [
+        0.761111,
+        0.342574
+      ],
+      [
+        0.246667,
+        0.368317
+      ],
+      [
+        0.238889,
+        0.643564
+      ],
+      [
+        0.753333,
+        0.635644
+      ]
+    ],
+    "size": [
+      900,
+      505
+    ],
+    "mask": "./assets/demos/shade/mask.png"
+  },
+  {
+    "id": "rear",
+    "label": "Rear",
+    "subtitle": "Rear view \u00b7 perspective",
+    "images": {
+      "original": "./assets/demos/rear/original.webp",
+      "blur": "./assets/demos/rear/blur.webp",
+      "mosaic": "./assets/demos/rear/mosaic.webp",
+      "custom": "./assets/demos/rear/custom.webp"
+    },
+    "quad": [
+      [
+        0.254444,
+        0.368317
+      ],
+      [
+        0.245556,
+        0.623762
+      ],
+      [
+        0.748889,
+        0.633663
+      ],
+      [
+        0.755556,
+        0.366337
+      ]
+    ],
+    "size": [
+      900,
+      505
+    ],
+    "mask": "./assets/demos/rear/mask.png"
+  }
+]
