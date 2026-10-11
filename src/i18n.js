@@ -198,8 +198,8 @@ export function normalizeLocale(value) {
   return typeof value === "string" && /^zh(?:-|$)/i.test(value) ? "zh" : "en";
 }
 
-export function resolveLocale(stored, browserLanguage) {
-  return stored === "en" || stored === "zh" ? stored : normalizeLocale(browserLanguage);
+export function resolveLocale(stored) {
+  return stored === "zh" ? "zh" : "en";
 }
 
 export function translate(locale, key, values = {}) {
@@ -252,7 +252,7 @@ export function initI18n(doc) {
   const win = doc.defaultView;
   let saved;
   try { saved = win.localStorage.getItem("apexveil-language"); } catch { /* Storage is optional. */ }
-  let locale = resolveLocale(saved, win.navigator.language);
+  let locale = resolveLocale(saved);
   function setLocale(value) {
     const next = normalizeLocale(value);
     try { win.localStorage.setItem("apexveil-language", next); } catch { /* Optional. */ }

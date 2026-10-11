@@ -4,7 +4,7 @@ Source for [apexveil.github.io](https://apexveil.github.io), separate from the [
 
 The website is a static, interactive viewer of three authorized real photographic examples: sunset, shade and rear. Each example includes the original, blur, mosaic and custom P7+ replacement. A draggable split comparison, three-view layout and method explorer make the results inspectable. Decorative motion can be paused.
 
-English and Chinese cover the page and comparison controls. The first visit follows the browser language; explicit selection is stored locally. Switching language preserves the selected photograph, finish, comparison layout, divider percentage, method step and motion setting.
+English and Chinese cover the page and comparison controls. The first visit defaults to English regardless of browser language; explicit EN/ZH selection is stored locally. Switching language preserves the selected photograph, finish, comparison layout, divider percentage, method step and motion setting.
 
 These are pre-rendered experiments, not live inference. The site does not upload visitor media or run models. An owner-approved 3.3-second video shows RGB | native SAM 3.1 masks | ApexVeil replacement. It retains the original H.264/AAC file and exposes native playback/fullscreen controls and a direct download. The core repository now includes a personal offline Studio with reusable Stage 1 segmentation and independent Stage 2 rendering. Broad video-quality validation remains ongoing.
 

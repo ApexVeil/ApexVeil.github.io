@@ -4,11 +4,11 @@ import { readFile } from "node:fs/promises";
 import { messages, resolveLocale, translate, localizedCase, initI18n } from "./i18n.js";
 import { initComparison } from "./compare.js";
 
-test("explicit language selection overrides the browser; first visit follows Chinese variants", () => {
+test("English is the first-visit default regardless of browser language; explicit choices persist", () => {
   assert.equal(resolveLocale("en", "zh-CN"), "en");
   assert.equal(resolveLocale("zh", "en-US"), "zh");
-  assert.equal(resolveLocale(null, "zh-TW"), "zh");
-  assert.equal(resolveLocale(null, "zh-Hans"), "zh");
+  assert.equal(resolveLocale(null, "zh-TW"), "en");
+  assert.equal(resolveLocale(null, "zh-Hans"), "en");
   assert.equal(resolveLocale("unsupported", "en-GB"), "en");
 });
 
@@ -129,13 +129,13 @@ test("language selection survives reload and updates html.lang without new compa
   let changes = 0;
   doc.addEventListener("apexveil:languagechange", () => changes++);
   const i18n = initI18n(doc);
-  assert.equal(doc.documentElement.lang, "zh-CN");
-  i18n.setLocale("en");
   assert.equal(doc.documentElement.lang, "en");
-  assert.equal(storage.get("apexveil-language"), "en");
+  i18n.setLocale("zh");
+  assert.equal(doc.documentElement.lang, "zh-CN");
+  assert.equal(storage.get("apexveil-language"), "zh");
   assert.equal(changes, 1);
   const reloaded = initI18n(doc);
-  assert.equal(reloaded.getLocale(), "en");
-  reloaded.setLocale("en");
+  assert.equal(reloaded.getLocale(), "zh");
+  reloaded.setLocale("zh");
   assert.equal(changes, 1);
 });
