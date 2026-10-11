@@ -3,21 +3,21 @@
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#0c0d0f"><title>ApexVeil · 极影 — Your shot. Your signature.</title>
-<meta name="description" data-i18n-content="page.description" content="Explore real automotive image experiments: original, blur, mosaic and custom plate replacement. ApexVeil is being built in the open.">
+<meta name="description" data-i18n-content="page.description" content="Explore real automotive image and video experiments: blur, mosaic, custom plate replacement and a reusable offline Studio.">
 <meta property="og:title" content="ApexVeil · 极影"><meta property="og:description" data-i18n-content="page.ogDescription" content="Your shot. Your signature. Explore the real before-and-after results.">
 <meta property="og:image" content="https://apexveil.github.io/assets/demos/sunset/custom.webp">
 <link rel="icon" href="./favicon.svg" type="image/svg+xml">
 <link rel="preload" href="./assets/fonts/bebas-neue.ttf" as="font" type="font/ttf" crossorigin>
 <link rel="preload" href="./assets/fonts/manrope.ttf" as="font" type="font/ttf" crossorigin>
 <link rel="preload" href="./assets/demos/sunset/custom.webp" as="image">
-<link rel="stylesheet" href="./style.css?v=4">
-<script type="module" src="./src/main.js?v=4"></script>
+<link rel="stylesheet" href="./style.css?v=5">
+<script type="module" src="./src/main.js?v=5"></script>
 </head>
 <body>
 <a class="skip-link" href="#results" data-i18n="nav.skip">Skip to results</a>
 <header class="site-header">
 <a class="brand" href="#home" aria-label="ApexVeil home" data-i18n-aria-label="nav.home">ApexVeil</a>
-<nav aria-label="Main navigation" data-i18n-aria-label="nav.main"><a href="#results" data-i18n="nav.results">Results</a><a href="#method" data-i18n="nav.method">Method</a><a href="https://github.com/ApexVeil/ApexVeil">GitHub</a><div class="language-switch" role="group" aria-label="Website language" data-i18n-aria-label="nav.language"><button type="button" data-locale="en" lang="en" aria-pressed="true" aria-label="English">EN</button><button type="button" data-locale="zh" lang="zh-CN" aria-pressed="false" aria-label="中文">中文</button></div><button class="motion-toggle" id="motion-toggle" type="button" aria-pressed="true"><span id="motion-label">Motion on</span><i aria-hidden="true"></i></button></nav>
+<nav aria-label="Main navigation" data-i18n-aria-label="nav.main"><a href="#results" data-i18n="nav.results">Results</a><a href="#video" class="nav-video" data-i18n="nav.video">Video</a><a href="#method" data-i18n="nav.method">Method</a><a href="https://github.com/ApexVeil/ApexVeil">GitHub</a><div class="language-switch" role="group" aria-label="Website language" data-i18n-aria-label="nav.language"><button type="button" data-locale="en" lang="en" aria-pressed="true" aria-label="English">EN</button><button type="button" data-locale="zh" lang="zh-CN" aria-pressed="false" aria-label="中文">中文</button></div><button class="motion-toggle" id="motion-toggle" type="button" aria-pressed="true"><span id="motion-label">Motion on</span><i aria-hidden="true"></i></button></nav>
 </header>
 <main>
 <section class="hero" id="home" aria-labelledby="hero-title">
@@ -41,13 +41,26 @@
 <div id="comparison-root" class="reveal"><p class="loading-copy" data-i18n="results.loading">Loading the image examples…</p></div>
 <p class="demo-note" data-i18n="results.note">Pre-rendered image examples. No upload required.</p>
 </section>
+<section class="video-demo section-shell" id="video" aria-labelledby="video-title">
+<div class="section-title reveal"><div><p class="eyebrow" data-i18n="video.eyebrow">In motion</p><h2 id="video-title" data-i18n="video.title">Every frame, together.</h2></div><p data-i18n-lines="video.description">One continuous drive-by.
+Original, native mask and the final composite.</p></div>
+<figure class="video-card reveal">
+<div class="video-labels" aria-hidden="true"><span><i></i><b data-i18n="video.rgb">RGB · Original</b></span><span><i></i><b data-i18n="video.sam">SAM 3.1 · Mask</b></span><span><i></i><b data-i18n="video.result">ApexVeil · Replace</b></span></div>
+<video id="drive-demo" controls playsinline preload="none" width="3840" height="720" poster="./assets/demos/video/drive-past-poster.jpg" aria-describedby="video-caption" data-i18n-aria-label="video.player" aria-label="Drive-by video comparison: RGB, SAM 3.1 mask and ApexVeil replacement">
+<source src="./assets/demos/video/rgb-sam-apexveil-v2.mp4" type="video/mp4">
+<p><a href="./assets/demos/video/rgb-sam-apexveil-v2.mp4" data-i18n="video.fallback">Download the comparison video</a></p>
+</video>
+<figcaption id="video-caption"><div><strong data-i18n="video.metadata">3.3 seconds · 30 fps · Offline processing</strong><p data-i18n="video.caption">A real processed clip. Watch the plate approach and leave the frame.</p></div><a class="video-download" href="./assets/demos/video/rgb-sam-apexveil-v2.mp4" download="RGB-SAM-ApexVeil-v2.mp4"><span data-i18n="video.download">Download original demo</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M12 3v12m-4-4 4 4 4-4M4 16v5h16v-5"/></svg></a></figcaption>
+</figure>
+<div class="video-footnote"><p data-i18n="video.note">A short-shot experiment, not a universal quality benchmark. Open fullscreen to inspect the details.</p><a href="https://github.com/ApexVeil/ApexVeil/blob/main/docs/STUDIO.md" data-i18n="video.studio">Run your own Studio ↗</a></div>
+</section>
 <section class="method section-shell" id="method" aria-labelledby="method-title">
 <div class="method-copy reveal">
 <p class="eyebrow" data-i18n="method.eyebrow">Method explorer</p><h2 id="method-title" data-i18n-lines="method.title">Every detail<br>stays in frame.</h2>
 <div class="method-steps" role="group" aria-label="Explore the method" data-i18n-aria-label="method.group">
 <button class="method-step is-active" data-step="surface" aria-pressed="true" type="button"><span class="step-number">01</span><span><strong data-i18n="method.surface.title">Find the surface</strong><small data-i18n="method.surface.description">Select the region. Keep the foreground.</small></span><svg viewBox="0 0 20 20" aria-hidden="true"><path d="m7 4 6 6-6 6"/></svg></button>
 <button class="method-step" data-step="appearance" aria-pressed="false" type="button"><span class="step-number">02</span><span><strong data-i18n="method.appearance.title">Match the scene</strong><small data-i18n="method.appearance.description">Perspective, light and texture belong together.</small></span><svg viewBox="0 0 20 20" aria-hidden="true"><path d="m7 4 6 6-6 6"/></svg></button>
-<button class="method-step" data-step="motion" aria-pressed="false" type="button"><span class="step-number">03</span><span><strong data-i18n="method.motion.title">Follow the motion</strong><small data-i18n="method.motion.description">Temporal consistency is the next step.</small></span><svg viewBox="0 0 20 20" aria-hidden="true"><path d="m7 4 6 6-6 6"/></svg></button>
+<button class="method-step" data-step="motion" aria-pressed="false" type="button"><span class="step-number">03</span><span><strong data-i18n="method.motion.title">Follow the motion</strong><small data-i18n="method.motion.description">Stabilize geometry and appearance over time.</small></span><svg viewBox="0 0 20 20" aria-hidden="true"><path d="m7 4 6 6-6 6"/></svg></button>
 </div>
 </div>
 <figure class="method-preview reveal" data-step="surface">
@@ -58,7 +71,7 @@
 </figure>
 </section>
 <section class="open-source section-shell reveal" aria-labelledby="open-title">
-<div><p class="eyebrow" data-i18n="open.eyebrow">Open source</p><h2 id="open-title" data-i18n="open.title">Built in the open.</h2><p class="open-description" data-i18n="open.description">Image experiments today. A unified image and video workflow in development.</p></div>
+<div><p class="eyebrow" data-i18n="open.eyebrow">Open source</p><h2 id="open-title" data-i18n="open.title">Built in the open.</h2><p class="open-description" data-i18n="open.description">A shared image and video engine. Reusable segmentation, deterministic composition and an optional AI guide.</p></div>
 <div class="open-links"><a href="https://github.com/ApexVeil/ApexVeil"><span data-i18n="open.code">Explore the code</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15m-6-6 6 6-6 6"/></svg></a><a href="https://github.com/ApexVeil/ApexVeil/blob/main/docs/ROADMAP.md"><span data-i18n="open.roadmap">Read the roadmap</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15m-6-6 6 6-6 6"/></svg></a></div>
 </section>
 </main>
