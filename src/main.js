@@ -1,5 +1,5 @@
-import { initComparison } from "./compare.js";
-import { initI18n, localizedCase } from "./i18n.js";
+import { initComparison } from "./compare.js?v=5";
+import { initI18n, localizedCase } from "./i18n.js?v=5";
 
 const html = document.documentElement;
 html.classList.add("js");

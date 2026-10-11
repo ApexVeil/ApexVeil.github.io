@@ -1,4 +1,4 @@
-import { normalizeLocale, translate, localizedCase } from "./i18n.js";
+import { normalizeLocale, translate, localizedCase } from "./i18n.js?v=5";
 
 /**
  * A dependency-free, accessible comparison viewer.
